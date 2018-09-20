@@ -1,14 +1,14 @@
 package com.mycompany.cupcakeproject;
 
-public class User {
+public class UserDTO {
 
     int id;
 
     String name, username, password;
 
-    CustomerOrAdmin customerOrAdmin;
+    CustomerOrAdminDTO customerOrAdmin;
 
-    public User(int id, String name, String username, String password, CustomerOrAdmin customerOrAdmin) {
+    public UserDTO(int id, String name, String username, String password, CustomerOrAdminDTO customerOrAdmin) {
         this.id = id;
         this.name = name;
         this.username = username;
@@ -32,7 +32,7 @@ public class User {
         return password;
     }
 
-    public CustomerOrAdmin getCustomerOrAdmin() {
+    public CustomerOrAdminDTO getCustomerOrAdmin() {
         return customerOrAdmin;
     }
 

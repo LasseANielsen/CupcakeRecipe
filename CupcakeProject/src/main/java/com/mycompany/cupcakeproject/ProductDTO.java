@@ -1,10 +1,10 @@
 package com.mycompany.cupcakeproject;
 
-public class Product {
+public class ProductDTO {
 
     int id, order_id, toppings_id, bottom_id, cart_id;
 
-    public Product(int id, int order_id, int toppings_id, int bottom_id, int cart_id) {
+    public ProductDTO(int id, int order_id, int toppings_id, int bottom_id, int cart_id) {
         this.id = id;
         this.order_id = order_id;
         this.toppings_id = toppings_id;

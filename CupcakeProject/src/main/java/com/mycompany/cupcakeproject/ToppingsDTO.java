@@ -1,6 +1,6 @@
 package com.mycompany.cupcakeproject;
 
-public class Toppings {
+public class ToppingsDTO {
 
     int toppings_id, price;
     String name;
@@ -17,7 +17,7 @@ public class Toppings {
         return name;
     }
 
-    public Toppings(int toppings_id, int price, String name) {
+    public ToppingsDTO(int toppings_id, int price, String name) {
         this.toppings_id = toppings_id;
         this.price = price;
         this.name = name;
