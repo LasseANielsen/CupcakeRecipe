@@ -1,5 +1,5 @@
 package com.mycompany.cupcakeproject;
 
-public enum CustomerOrAdminDTO {
+public enum CustomerOrAdmin {
     C, A
 }

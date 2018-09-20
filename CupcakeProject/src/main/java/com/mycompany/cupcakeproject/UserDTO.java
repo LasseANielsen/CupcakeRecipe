@@ -6,9 +6,9 @@ public class UserDTO {
 
     String name, username, password;
 
-    CustomerOrAdminDTO customerOrAdmin;
+    CustomerOrAdmin customerOrAdmin;
 
-    public UserDTO(int id, String name, String username, String password, CustomerOrAdminDTO customerOrAdmin) {
+    public UserDTO(int id, String name, String username, String password, CustomerOrAdmin customerOrAdmin) {
         this.id = id;
         this.name = name;
         this.username = username;
@@ -32,7 +32,7 @@ public class UserDTO {
         return password;
     }
 
-    public CustomerOrAdminDTO getCustomerOrAdmin() {
+    public CustomerOrAdmin getCustomerOrAdmin() {
         return customerOrAdmin;
     }
 
