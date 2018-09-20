@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS `CupcakeDB`.`User` (
   `Username` VARCHAR(45) NOT NULL,
   `Password` VARCHAR(45) NOT NULL,
   `C/A` ENUM('C', 'A') NOT NULL,
+  `Balance` INT NOT NULL,
   PRIMARY KEY (`Id`))
 ENGINE = InnoDB;
 
