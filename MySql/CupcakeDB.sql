@@ -29,7 +29,10 @@ CREATE TABLE IF NOT EXISTS `CupcakeDB`.`User` (
   `Password` VARCHAR(45) NOT NULL,
   `C/A` ENUM('C', 'A') NOT NULL,
   `Balance` INT NOT NULL,
-  PRIMARY KEY (`Id`))
+  `Email` VARCHAR(200) NOT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE INDEX `Username_UNIQUE` (`Username` ASC),
+  UNIQUE INDEX `Email_UNIQUE` (`Email` ASC))
 ENGINE = InnoDB;
 
 
