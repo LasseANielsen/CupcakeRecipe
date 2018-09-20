@@ -12,7 +12,7 @@ public class DBConnector {
     private static final String PORT = "3306";
     public static final String DATABASE = "recipeproject";
     private static final String USERNAME = "lasse";
-    private static final String PASSWORD = "1234"; 
+    private static final String PASSWORD = "1234";
 
     public DBConnector() throws Exception {
         Class.forName("com.mysql.jdbc.Driver").newInstance();
