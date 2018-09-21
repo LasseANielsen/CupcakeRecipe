@@ -40,16 +40,19 @@ public class ShopServlet extends HttpServlet {
             out.println("<title>Servlet ShopServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ShopServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ShopServlet at " + request.getContextPath() + "</h1>");          
+            out.println("<select name=\"Toppings\">");
+            out.println("<option> option 1</option>");
+            out.println("<option> option 2</option>");
+            out.println("<option> option 3</option>");
+            out.println("<option> option 4</option>");
+            out.println("<option> option 5</option>");
+            out.println("<option> option 6</option>");
+            out.println("<option> option 7</option>");
+            out.println("<option> option 8</option>");
+            out.println("<option> option 9</option>");
+            out.println("</select>");
             out.println("</body>");
-            out.println("<div class=\"dropdown\">");
-            out.println("<button onclick=\"myFunction()\" class=\"dropbtn\">Dropdown</button>");
-            out.println("<div id=\"myDropdown\" class=\"dropdown-content\">");
-            out.println("<a href=\"#\">Link 1</a>");
-            out.println("<a href=\"#\">Link 2</a>");
-            out.println("<a href=\"#\">Link 3</a>");
-            out.println("</div>");
-            out.println("</div>");
             out.println("</html>");
         }
     }
