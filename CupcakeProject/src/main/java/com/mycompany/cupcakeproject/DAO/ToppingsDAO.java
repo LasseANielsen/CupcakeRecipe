@@ -1,6 +1,6 @@
 package com.mycompany.cupcakeproject.DAO;
 import com.mycompany.cupcakeproject.DBConnector;
-import com.mycompany.cupcakeproject.ToppingsDTO;
+import com.mycompany.cupcakeproject.DTO.ToppingsDTO;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
