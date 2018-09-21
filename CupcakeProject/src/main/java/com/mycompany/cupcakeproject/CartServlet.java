@@ -44,6 +44,7 @@ public class CartServlet extends HttpServlet {
             out.println("<table>");
             out.println("<tr>");
             out.println("<th>Topping</th>");
+            out.println("<br>");
             out.println("<th>Bottom</th>");
             out.println("<th>Quantity</th>");
             out.println("<th>Total price</th>");
