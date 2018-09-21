@@ -24,8 +24,8 @@ public class CartServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         Controller c = new Controller();
-        String topName = request.getParameter("Toppings");
-        String botName = request.getParameter("Bottom");
+        String topName = request.getParameter("Toppings").replace(" %,-", "");
+        String botName = request.getParameter("Bottom").replace(" ,-", "");
         
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
