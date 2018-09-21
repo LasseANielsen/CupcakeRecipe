@@ -51,6 +51,7 @@ public class CartServlet extends HttpServlet {
             out.print("<th></th>");
             out.println("<th>Total price</th>");
             out.print("<th></th>");
+            out.print("<th></th>");
             out.println("</tr>");
             out.println("<tr>");
             out.print("<td></td>");
@@ -63,8 +64,12 @@ public class CartServlet extends HttpServlet {
             out.println("</tr>");
             out.println("<tr>");
             out.println("<td>" + topName + "</td>");
+            out.print("<th></th>");
             out.println("<td>" + botName + "</td>");
+            out.print("<th></th>");
             out.println("<td>" + quantity + "</td>");
+            out.print("<th></th>");
+            out.print("<th></th>");
             out.println("<td>" + totalPrice + "</td>");
             out.println("</tr>");
             out.println("</table>");
