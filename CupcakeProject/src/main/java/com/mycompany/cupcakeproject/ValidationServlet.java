@@ -1,4 +1,3 @@
-
 package com.mycompany.cupcakeproject;
 
 import java.io.IOException;
@@ -9,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "Registration", urlPatterns = {"/Registration"})
-public class RegistrationServlet extends HttpServlet {
+@WebServlet(name = "Tasting", urlPatterns = {"/Tasting"})
+public class ValidationServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,16 +33,10 @@ public class RegistrationServlet extends HttpServlet {
             out.println("p {color:tomato;}");
             out.println("body {color:tomato; background:peachpuff}");
             out.println("</style>");
-            out.println("<title>Servlet RegistrationServlet</title>");            
+            out.println("<title>Servlet ValidationServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Mix your ingredients!</h1>");
-            out.println("<form action=\"/Tasting.html\">");
-            out.println("<p>First ingredient - Username</p><input type=\"text\" name=\"username\">");
-            out.println("<p>Second ingredient - Password</p><input type=\"text\" name=\"password\">");
-            out.println("<p>Third ingredient - Email</p><input type=\"text\" name=\"email\">");
-            out.println("<br><br><input type=\"submit\" value=\"Bake Account\">");
-            out.println("</form>");
+            out.println("<h1>Servlet ValidationServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
