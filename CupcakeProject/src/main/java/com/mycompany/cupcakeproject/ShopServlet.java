@@ -40,7 +40,8 @@ public class ShopServlet extends HttpServlet {
             out.println("<title>Servlet ShopServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ShopServlet at " + request.getContextPath() + "</h1>");  
+            out.println("<h1>Servlet ShopServlet at " + request.getContextPath() + "</h1>"); 
+            out.println("<form action=\"/Cart.html\">");
             out.println("<p> Choose your topping</p> <br>");
             out.println("<select name=\"Toppings\">");
             out.println("<option> Chocolate</option>");
@@ -61,6 +62,9 @@ public class ShopServlet extends HttpServlet {
             out.println("<option> Pistacio</option>");
             out.println("<option> Almond</option>");
             out.println("</select>");
+            out.println("<br>");
+            out.println("<input type=\"submit\" value=\"Buy now\">");
+            out.println("</form>");
             out.println("</body>");
             out.println("</html>");
         }
