@@ -55,7 +55,7 @@ public class ShopServlet extends HttpServlet {
             out.println("<option> Blue Cheese</option>");
             out.println("</select>");
             out.println("<p> Choose your bottom</p> <br>");
-            out.println("<select name=\"Toppings\">");
+            out.println("<select name=\"Bottom\">");
             out.println("<option> Chocolate</option>");
             out.println("<option> Vanilla</option>");
             out.println("<option> Nutmeg</option>");
