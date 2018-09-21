@@ -42,6 +42,7 @@ public class CartServlet extends HttpServlet {
             out.println("h1 {color:deeppink;}");
             out.println("p {color:tomato;}");
             out.println("body {color:tomato; background:peachpuff}");
+            out.println("</style>");
             out.println("<title>Servlet CartServlet</title>");
             out.println("</head>");
             out.println("<body>");
