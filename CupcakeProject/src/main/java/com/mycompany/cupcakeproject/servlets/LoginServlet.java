@@ -1,4 +1,4 @@
-package com.mycompany.cupcakeproject;
+package com.mycompany.cupcakeproject.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "Registration", urlPatterns = {"/Registration"})
-public class RegistrationServlet extends HttpServlet {
+@WebServlet(name = "Login", urlPatterns = {"/Login"})
+public class LoginServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,19 +33,23 @@ public class RegistrationServlet extends HttpServlet {
             out.println("p {color:tomato;}");
             out.println("body {color:tomato; background:peachpuff}");
             out.println("</style>");
-            out.println("<title>Servlet RegistrationServlet</title>");
+            out.println("<title>Servlet LoginServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Mix your ingredients!</h1>");
+            out.println("<h1>Back to the mixer!</h1>");
             if ("false".equals(request.getParameter("validation"))) {
-                out.println("That cake is already in the oven!");
+                out.println("Oh no, that cake does not exist!");
             }
-            out.println("<form action=\"/CupcakeProject/Tasting\">");
-            out.println("<p>First ingredient - Username</p><input type=\"text\" name=\"username\">");
-            out.println("<p>Second ingredient - Password</p><input type=\"text\" name=\"password\">");
-            out.println("<p>Third ingredient - Email</p><input type=\"text\" name=\"email\">");
-            out.println("<br><br><input type=\"submit\" value=\"Bake Account\">");
+            out.println("<form action=\"/CupcakeProject/LoginValidator\">");
+            out.println("<p>Username</p><input type=\"text\" name=\"username\">");
+            out.println("<p>Password</p><input type=\"text\" name=\"password\">");
+            out.println("<br><br><input type=\"submit\" value=\"Go to the mixer!\">");
             out.println("</form>");
+            if ("false".equals(request.getParameter("validation"))) {
+                out.println("<form action=\"/CupcakeProject/Registration\">");
+                out.println("<br><br><input type=\"submit\" value=\"New recipe?\">");
+                out.println("</form>");
+            }
             out.println("</body>");
             out.println("</html>");
         }

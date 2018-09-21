@@ -1,5 +1,7 @@
-package com.mycompany.cupcakeproject;
+package com.mycompany.cupcakeproject.servlets;
 
+import com.mycompany.cupcakeproject.Controller;
+import com.mycompany.cupcakeproject.Validator;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
