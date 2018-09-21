@@ -1,5 +1,6 @@
-package com.mycompany.cupcakeproject;
+package com.mycompany.cupcakeproject.servlets;
 
+import com.mycompany.cupcakeproject.Controller;
 import com.mycompany.cupcakeproject.DTO.BottomDTO;
 import com.mycompany.cupcakeproject.DTO.ToppingsDTO;
 import java.io.IOException;
