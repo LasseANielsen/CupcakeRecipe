@@ -76,7 +76,6 @@ public class UserDAO {
             ex.printStackTrace();
             System.out.println("Error");
         }
-
     }
 
     private int getNextAvailableId() {
@@ -88,5 +87,32 @@ public class UserDAO {
             }
         }
         return i;
+    }
+    
+        public UserDTO getUserByEmail(String email) {
+        try {
+            Connection c = new DBConnector().getConnection();
+            Statement stmt = c.createStatement();
+            String query
+                    = "SELECT * "
+                    + "FROM `User` "
+                    + "WHERE `email` = '" + email + "';";
+            ResultSet res = stmt.executeQuery(query);
+            while (res.next()) {
+                int id = Integer.parseInt(res.getString("Id"));
+                String name = res.getString("Name");
+                String username = res.getString("Username");
+                String password = res.getString("Password");
+                CustomerOrAdmin privileges = CustomerOrAdmin.valueOf(res.getString("C/A"));
+                int balance = Integer.parseInt(res.getString("Balance"));
+                String user_email = res.getString("Email");
+
+                return new UserDTO(id, balance, name, username, password, user_email, privileges);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Error");
+        }
+        return null;
     }
 }
