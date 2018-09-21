@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author lasse
  */
-@WebServlet(name = "ShopServlet", urlPatterns = {"/ShopServlet"})
+@WebServlet(name = "Shop", urlPatterns = {"/Shop"})
 public class ShopServlet extends HttpServlet {
 
     /**
@@ -45,9 +45,9 @@ public class ShopServlet extends HttpServlet {
             out.println("<title>Servlet ShopServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ShopServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Welcome to the bakery! Where we bake hash!</h1>");
             out.println("<form action=\"/Cart\">");
-            out.println("<p> Choose your topping</p> <br>");
+            out.println("<p> Choose your topping</p>");
             out.println("<select name=\"Toppings\">");
             out.println("<option> Chocolate 5,-</option>");
             out.println("<option> Blueberry 5,-</option>");
@@ -59,7 +59,7 @@ public class ShopServlet extends HttpServlet {
             out.println("<option> Lemon 8,-</option>");
             out.println("<option> Blue Cheese 9,-</option>");
             out.println("</select>");
-            out.println("<p> Choose your bottom</p> <br>");
+            out.println("<p> Choose your bottom</p>");
             out.println("<select name=\"Bottom\">");
             out.println("<option> Chocolate 5,-</option>");
             out.println("<option> Vanilla 5,-</option>");
@@ -70,7 +70,7 @@ public class ShopServlet extends HttpServlet {
             out.println("<br>");
             out.println("</select>");
             out.println("<p>How many would you like?</p><input type=\"text\" name=\"quantity\">");
-            out.println("<br>");
+            out.println("<br><br>");
             out.println("<input type=\"submit\" value=\"Add to cart\">");
             out.println("</form>");
             out.println("</body>");
