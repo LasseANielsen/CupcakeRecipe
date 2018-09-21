@@ -41,7 +41,7 @@ public class ShopServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ShopServlet at " + request.getContextPath() + "</h1>");  
-            out.println("<p> Choose your topping <br>");
+            out.println("<p> Choose your topping</p> <br>");
             out.println("<select name=\"Toppings\">");
             out.println("<option> Chocolate</option>");
             out.println("<option> Blueberry</option>");
@@ -52,6 +52,14 @@ public class ShopServlet extends HttpServlet {
             out.println("<option> Orange</option>");
             out.println("<option> Lemon</option>");
             out.println("<option> Blue Cheese</option>");
+            out.println("<h1>Servlet ShopServlet at " + request.getContextPath() + "</h1>");  
+            out.println("<p> Choose your bottom</p> <br>");
+            out.println("<select name=\"Toppings\">");
+            out.println("<option> Chocolate</option>");
+            out.println("<option> Vanilla</option>");
+            out.println("<option> Nutmeg</option>");
+            out.println("<option> Pistacio</option>");
+            out.println("<option> Almond</option>");
             out.println("</select>");
             out.println("</body>");
             out.println("</html>");
