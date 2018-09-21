@@ -90,6 +90,7 @@ public class CartServlet extends HttpServlet {
             out.println("<td>" + totalPrice + "</td>");
             out.println("</tr>");
             out.println("</table>");
+            out.println("<input type=\"submit\" value=\"Bake my order\">");
             out.println("</body>");
             out.println("</html>");
         }
