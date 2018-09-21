@@ -1,4 +1,4 @@
-package com.mycompany.cupcakeproject;
+package com.mycompany.cupcakeproject.DTO;
 
 public class BottomDTO {
 

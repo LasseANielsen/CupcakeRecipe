@@ -1,5 +1,8 @@
-package com.mycompany.cupcakeproject;
+package com.mycompany.cupcakeproject.DAO;
 
+import com.mycompany.cupcakeproject.CustomerOrAdmin;
+import com.mycompany.cupcakeproject.DBConnector;
+import com.mycompany.cupcakeproject.DTO.UserDTO;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;

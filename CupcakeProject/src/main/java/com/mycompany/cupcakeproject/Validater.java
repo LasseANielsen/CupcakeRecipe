@@ -1,5 +1,6 @@
 package com.mycompany.cupcakeproject;
 
+import com.mycompany.cupcakeproject.DTO.UserDTO;
 import org.apache.commons.validator.routines.EmailValidator;
 
 public class Validater {

@@ -1,4 +1,6 @@
-package com.mycompany.cupcakeproject;
+package com.mycompany.cupcakeproject.DTO;
+
+import com.mycompany.cupcakeproject.CustomerOrAdmin;
 
 public class UserDTO {
 

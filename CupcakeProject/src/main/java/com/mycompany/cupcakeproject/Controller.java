@@ -1,5 +1,8 @@
 package com.mycompany.cupcakeproject;
 
+import com.mycompany.cupcakeproject.DAO.UserDAO;
+import com.mycompany.cupcakeproject.DTO.UserDTO;
+
 public class Controller {
 
     UserDAO userDAO = new UserDAO();
