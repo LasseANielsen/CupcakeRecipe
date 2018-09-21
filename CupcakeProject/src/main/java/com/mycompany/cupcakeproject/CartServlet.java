@@ -23,6 +23,10 @@ public class CartServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        Controller c = new Controller();
+        String topName = request.getParameter("Toppings");
+        String botName = request.getParameter("Bottom");
+        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -42,7 +46,7 @@ public class CartServlet extends HttpServlet {
             out.println("<td>"+request.getParameter("Toppings")+"</td>");
             out.println("<td>"+request.getParameter("Bottom")+"</td>");
             out.println("<td>"+request.getParameter("Quantity")+"</td>");
-//            out.println("<td>"++"</td>");
+            out.println("<td>"+c.getToppingByName(topName) + c.getBottomByName(botName)+"</td>");
             out.println("</tr>");
             out.println("</table>");
             out.println("<h1>Servlet CartServlet at " + request.getContextPath() + "</h1>");
