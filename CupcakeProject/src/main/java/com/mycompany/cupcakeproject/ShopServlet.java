@@ -37,10 +37,15 @@ public class ShopServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<style>");
+            out.println("h1 {color:deeppink;}");
+            out.println("p {color:tomato;}");
+            out.println("body {color:tomato; background:peachpuff}");
+            out.println("</style>");
             out.println("<title>Servlet ShopServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ShopServlet at " + request.getContextPath() + "</h1>"); 
+            out.println("<h1>Servlet ShopServlet at " + request.getContextPath() + "</h1>");
             out.println("<form action=\"/Cart\">");
             out.println("<p> Choose your topping</p> <br>");
             out.println("<select name=\"Toppings\">");
@@ -65,9 +70,9 @@ public class ShopServlet extends HttpServlet {
             out.println("<br>");
             out.println("</select>");
             out.println("<p>How many would you like?</p><input type=\"text\" name=\"quantity\">");
-            out.println("<br>");       
+            out.println("<br>");
             out.println("<input type=\"submit\" value=\"Add to cart\">");
-            out.println("</form>");  
+            out.println("</form>");
             out.println("</body>");
             out.println("</html>");
         }
