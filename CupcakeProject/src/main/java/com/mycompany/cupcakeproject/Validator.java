@@ -12,6 +12,9 @@ public class Validator {
         if (username == null || username.isEmpty()) {
             return false;
         }
+        if (username.contains(";")) {
+            return false;
+        }
         if (username.length() < min || username.length() > max) {
             return false;
         }
@@ -19,9 +22,7 @@ public class Validator {
         if (user != null) {
             return false;
         }
-        if (username.contains(";")) {
-            return false;
-        }
+
         return true;
     }
 
@@ -30,12 +31,13 @@ public class Validator {
         if (password == null || password.isEmpty()) {
             return false;
         }
-        if (password.length() < min || password.length() > max) {
-            return false;
-        }
         if (password.contains(";")) {
             return false;
         }
+        if (password.length() < min || password.length() > max) {
+            return false;
+        }
+
         return true;
     }
 
@@ -44,19 +46,20 @@ public class Validator {
         if (email == null || email.isEmpty()) {
             return false;
         }
+        if (email.contains(";")) {
+            return false;
+        }
         if (email.length() < min || email.length() > max) {
             return false;
         }
         if (!EmailValidator.getInstance().isValid(email)) {
-           return false; 
+            return false;
         }
         UserDTO user = c.getUserByEmail(email);
         if (user != null) {
             return false;
         }
-        if (email.contains(";")) {
-            return false;
-        }
+
         return true;
     }
 
