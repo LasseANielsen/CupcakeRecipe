@@ -5,7 +5,6 @@ package com.mycompany.cupcakeproject;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -33,6 +32,20 @@ public class LoginValidatorServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
+        LoginValidator validator = new LoginValidator();
+
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+
+        boolean bUser = validator.validateUsername(username, password);
+
+        if (bUser) {
+            response.sendRedirect("/CupcakeProject/Shop");
+        } else {
+            response.sendRedirect("/CupcakeProject/Login?validation=false");
+        }
+
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -46,7 +59,7 @@ public class LoginValidatorServlet extends HttpServlet {
             out.println("<title>Servlet LoginValidatorServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Loging in</h1>");
+            out.println("<h1>Logging in</h1>");
             out.println("</body>");
             out.println("</html>");
         }

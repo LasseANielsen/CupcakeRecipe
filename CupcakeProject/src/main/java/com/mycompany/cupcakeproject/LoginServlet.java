@@ -37,7 +37,10 @@ public class LoginServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Back to the mixer!</h1>");
-            out.println("<form action=\"/CupcakeProject/Shop\">");
+            if ("false".equals(request.getParameter("validation"))) {
+                out.println("Oh no, that cake does not exist!");
+            }
+            out.println("<form action=\"/CupcakeProject/LoginValidator\">");
             out.println("<p>Username</p><input type=\"text\" name=\"username\">");
             out.println("<p>Password</p><input type=\"text\" name=\"password\">");
             out.println("<br><br><input type=\"submit\" value=\"Go to the mixer!\">");

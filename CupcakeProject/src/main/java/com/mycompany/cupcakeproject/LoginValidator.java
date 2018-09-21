@@ -22,7 +22,7 @@ public class LoginValidator {
         return validatePassword(username, password, user);
     }
 
-    public boolean validatePassword(String username, String password, UserDTO user) {
+    private boolean validatePassword(String username, String password, UserDTO user) {
 
         if (password == null || password.isEmpty()) {
             return false;
