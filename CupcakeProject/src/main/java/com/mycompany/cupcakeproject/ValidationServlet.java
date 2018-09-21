@@ -25,6 +25,7 @@ public class ValidationServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         Validator validator = new Validator();
+        Controller c = new Controller();
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -35,6 +36,7 @@ public class ValidationServlet extends HttpServlet {
         boolean bEmail = validator.validateEmail(email);
 
         if (bUser && bPassword && bEmail) {
+            c.newUser(email, username, password, 0);
             response.sendRedirect("/CupcakeProject/Login");
         } else {
             response.sendRedirect("/CupcakeProject/Registration?validation=false");

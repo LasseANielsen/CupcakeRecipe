@@ -37,4 +37,8 @@ public class Controller {
         BottomDTO DTO = botDAO.getPriceByName(name);
         return DTO;
     }
+    
+    public void newUser(String email, String username, String password, int balance) { 
+        userDAO.createUser(email, username, password, balance);
+    } 
 }
