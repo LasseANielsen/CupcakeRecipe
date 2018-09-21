@@ -1,5 +1,11 @@
 package com.mycompany.cupcakeproject;
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -8,8 +14,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "Login", urlPatterns = {"/Login"})
-public class LoginServlet extends HttpServlet {
+/**
+ *
+ * @author ryger
+ */
+@WebServlet(name = "LoginValidator", urlPatterns = {"/LoginValidator"})
+public class LoginValidatorServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,15 +43,10 @@ public class LoginServlet extends HttpServlet {
             out.println("p {color:tomato;}");
             out.println("body {color:tomato; background:peachpuff}");
             out.println("</style>");
-            out.println("<title>Servlet LoginServlet</title>");
+            out.println("<title>Servlet LoginValidatorServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Back to the mixer!</h1>");
-            out.println("<form action=\"/CupcakeProject/Shop\">");
-            out.println("<p>Username</p><input type=\"text\" name=\"username\">");
-            out.println("<p>Password</p><input type=\"text\" name=\"password\">");
-            out.println("<br><br><input type=\"submit\" value=\"Go to the mixer!\">");
-            out.println("</form>");
+            out.println("<h1>Loging in</h1>");
             out.println("</body>");
             out.println("</html>");
         }
