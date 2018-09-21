@@ -41,7 +41,7 @@ public class ShopServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ShopServlet at " + request.getContextPath() + "</h1>");  
-            out.println("<p> Choose your topping");
+            out.println("<p> Choose your topping <br>");
             out.println("<select name=\"Toppings\">");
             out.println("<option> Chocolate</option>");
             out.println("<option> Blueberry</option>");
