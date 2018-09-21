@@ -7,7 +7,6 @@ public class LoginValidator {
     Controller c = new Controller();
 
     public boolean validateUsername(String username, String password) {
-
         if (username == null || username.isEmpty()) {
             return false;
         }
@@ -15,25 +14,19 @@ public class LoginValidator {
             return false;
         }
         UserDTO user = c.getUserByName(username);
-        if (user != null) {
+        if (user == null) {
             return false;
         }
-
-        return validatePassword(username, password, user);
+        return validatePassword(password, user);
     }
 
-    private boolean validatePassword(String username, String password, UserDTO user) {
-
+    private boolean validatePassword(String password, UserDTO user) {
         if (password == null || password.isEmpty()) {
             return false;
         }
         if (password.contains(";")) {
             return false;
         }
-        if (!password.equals(user.getPassword())) {
-            return false;
-        }
-
-        return true;
+        return password.equals(user.getPassword());
     }
 }
