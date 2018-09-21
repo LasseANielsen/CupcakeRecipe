@@ -25,7 +25,7 @@ public class CartServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         Controller c = new Controller();
         String topName = request.getParameter("Toppings").replace(" %,-", "");
-        String botName = request.getParameter("Bottom").replace(" ,-", "");
+        String botName = request.getParameter("Bottom").replace(" %,-", "");
         
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -43,8 +43,8 @@ public class CartServlet extends HttpServlet {
             out.println("<th>Total price</th>");
             out.println("</tr>");
             out.println("<tr>");
-            out.println("<td>"+request.getParameter("Toppings")+"</td>");
-            out.println("<td>"+request.getParameter("Bottom")+"</td>");
+            out.println("<td>"+topName+"</td>");
+            out.println("<td>"+botName+"</td>");
             out.println("<td>"+request.getParameter("Quantity")+"</td>");
             out.println("<td>"+c.getToppingByName(topName) + c.getBottomByName(botName)+"</td>");
             out.println("</tr>");
