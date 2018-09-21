@@ -1,4 +1,3 @@
-
 package com.mycompany.cupcakeproject;
 
 import java.io.IOException;
@@ -31,17 +30,16 @@ public class RegistrationServlet extends HttpServlet {
             out.println("<head>");
             out.println("<style>");
             out.println("h1 {color:deeppink;}");
-            if ("false".equals(request.getParameter("validation"))) {
-                out.println("That cake is already in the oven!");
-                
-            }
             out.println("p {color:tomato;}");
             out.println("body {color:tomato; background:peachpuff}");
             out.println("</style>");
-            out.println("<title>Servlet RegistrationServlet</title>");            
+            out.println("<title>Servlet RegistrationServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Mix your ingredients!</h1>");
+            if ("false".equals(request.getParameter("validation"))) {
+                out.println("That cake is already in the oven!");
+            }
             out.println("<form action=\"/CupcakeProject/Tasting\">");
             out.println("<p>First ingredient - Username</p><input type=\"text\" name=\"username\">");
             out.println("<p>Second ingredient - Password</p><input type=\"text\" name=\"password\">");
