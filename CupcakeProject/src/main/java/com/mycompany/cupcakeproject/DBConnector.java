@@ -8,10 +8,10 @@ public class DBConnector {
     private Connection connection = null;
 
     //Constants
-    private static final String IP = "46.101.122.191";
+    private static final String IP = "104.248.26.203";
     private static final String PORT = "3306";
-    public static final String DATABASE = "recipeproject";
-    private static final String USERNAME = "lasse";
+    public static final String DATABASE = "CupcakeDB";
+    private static final String USERNAME = "Ryge";
     private static final String PASSWORD = "1234";
 
     public DBConnector() throws Exception {
