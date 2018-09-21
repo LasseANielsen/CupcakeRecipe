@@ -31,7 +31,7 @@ public class RegistrationServlet extends HttpServlet {
             out.println("<head>");
             out.println("<style>");
             out.println("h1 {color:deeppink;}");
-            if (request.getParameter("validation") == "false") {
+            if ("false".equals(request.getParameter("validation"))) {
                 out.println("That cake is already in the oven!");
                 
             }
