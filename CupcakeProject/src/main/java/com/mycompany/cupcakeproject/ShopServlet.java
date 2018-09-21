@@ -46,7 +46,7 @@ public class ShopServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Welcome to the bakery! Where we bake hash!</h1>");
-            out.println("<form action=\"/Cart\">");
+            out.println("<form action=\"/CupcakeProject/Cart\">");
             out.println("<p> Choose your topping</p>");
             out.println("<select name=\"Toppings\">");
             out.println("<option> Chocolate 5,-</option>");
@@ -69,7 +69,7 @@ public class ShopServlet extends HttpServlet {
             out.println("</select>");
             out.println("<br>");
             out.println("</select>");
-            out.println("<p>How many would you like?</p><input type=\"text\" name=\"quantity\">");
+            out.println("<p>How many would you like?</p><input type=\"text\" name=\"Quantity\">");
             out.println("<br><br>");
             out.println("<input type=\"submit\" value=\"Add to cart\">");
             out.println("</form>");

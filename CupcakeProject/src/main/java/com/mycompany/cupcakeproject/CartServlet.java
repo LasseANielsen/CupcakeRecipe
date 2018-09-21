@@ -1,5 +1,7 @@
 package com.mycompany.cupcakeproject;
 
+import com.mycompany.cupcakeproject.DTO.BottomDTO;
+import com.mycompany.cupcakeproject.DTO.ToppingsDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -24,9 +26,13 @@ public class CartServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         Controller c = new Controller();
-        String topName = request.getParameter("Toppings").replace(" %,-", "");
-        String botName = request.getParameter("Bottom").replace(" %,-", "");
-        
+        String topName = request.getParameter("Toppings").split(" ")[0];
+        String botName = request.getParameter("Bottom").split(" ")[0];
+        int quantity = Integer.parseInt(request.getParameter("Quantity"));
+        ToppingsDTO topDTO = c.getToppingByName(topName);
+        BottomDTO botDTO = c.getBottomByName(botName);
+        int totalPrice = (topDTO.getPrice() + botDTO.getPrice()) * quantity;
+
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -43,10 +49,10 @@ public class CartServlet extends HttpServlet {
             out.println("<th>Total price</th>");
             out.println("</tr>");
             out.println("<tr>");
-            out.println("<td>"+topName+"</td>");
-            out.println("<td>"+botName+"</td>");
-            out.println("<td>"+request.getParameter("Quantity")+"</td>");
-            out.println("<td>"+c.getToppingByName(topName) + c.getBottomByName(botName)+"</td>");
+            out.println("<td>" + topName + "</td>");
+            out.println("<td>" + botName + "</td>");
+            out.println("<td>" + quantity + "</td>");
+            out.println("<td>" + totalPrice + "</td>");
             out.println("</tr>");
             out.println("</table>");
             out.println("<h1>Servlet CartServlet at " + request.getContextPath() + "</h1>");
