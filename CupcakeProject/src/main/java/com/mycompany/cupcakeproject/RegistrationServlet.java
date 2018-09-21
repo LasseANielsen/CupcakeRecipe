@@ -31,6 +31,10 @@ public class RegistrationServlet extends HttpServlet {
             out.println("<head>");
             out.println("<style>");
             out.println("h1 {color:deeppink;}");
+            if (request.getParameter("validation") == "false") {
+                out.println("That cake is already in the oven!");
+                
+            }
             out.println("p {color:tomato;}");
             out.println("body {color:tomato; background:peachpuff}");
             out.println("</style>");
@@ -38,7 +42,7 @@ public class RegistrationServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Mix your ingredients!</h1>");
-            out.println("<form action=\"/Tasting.html\">");
+            out.println("<form action=\"/CupcakeProject/Tasting\">");
             out.println("<p>First ingredient - Username</p><input type=\"text\" name=\"username\">");
             out.println("<p>Second ingredient - Password</p><input type=\"text\" name=\"password\">");
             out.println("<p>Third ingredient - Email</p><input type=\"text\" name=\"email\">");

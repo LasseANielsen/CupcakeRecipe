@@ -24,10 +24,6 @@ public class ValidationServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String email = request.getParameter("email");
-        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -41,9 +37,25 @@ public class ValidationServlet extends HttpServlet {
             out.println("<title>Servlet ValidationServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ValidationServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Validating</h1>");
             out.println("</body>");
             out.println("</html>");
+        }
+        
+        Validator validator = new Validator();
+
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String email = request.getParameter("email");
+
+        boolean bUser = validator.validateUsername(username);
+        boolean bPassword = validator.validatePassword(password);
+        boolean bEmail = validator.validateEmail(email);
+
+        if (bUser && bPassword && bEmail) {
+            response.sendRedirect("/CupcakeProject/Login");
+        } else {
+            response.sendRedirect("/CupcakeProject/Registration?validation=false");
         }
     }
 
