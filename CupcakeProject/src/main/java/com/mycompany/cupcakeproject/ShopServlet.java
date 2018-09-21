@@ -63,6 +63,9 @@ public class ShopServlet extends HttpServlet {
             out.println("<option> Almond</option>");
             out.println("</select>");
             out.println("<br>");
+            out.println("</select>");
+            out.println("<p>How many would you like?</p><input type=\"text\" name=\"quantity\">");
+            out.println("<br>");
             out.println("<input type=\"submit\" value=\"Buy now\">");
             out.println("</form>");
             out.println("</body>");
