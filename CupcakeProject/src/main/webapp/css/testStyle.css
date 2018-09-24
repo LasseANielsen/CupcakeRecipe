@@ -1,0 +1,9 @@
+p {
+    color:chartreuse;
+}
+#idTest {
+    border: solid 1px blue;
+}
+.classTest {
+    border: solid 1px red;
+}

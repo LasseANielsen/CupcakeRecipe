@@ -1,6 +1,5 @@
 package mandag;
 
-
 public class Person {
     String name;
     int age;
@@ -17,6 +16,4 @@ public class Person {
     public int getAge() {
         return age;
     }
-    
-    
 }
