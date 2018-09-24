@@ -1,25 +1,17 @@
-package com.mycompany.cupcakeproject.servlets;
+package Mandag;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-import com.mycompany.cupcakeproject.LoginValidator;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author ryger
- */
-@WebServlet(name = "LoginValidator", urlPatterns = {"/LoginValidator"})
-public class LoginValidatorServlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/MandagsServlet"})
+public class MandagsServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,37 +25,19 @@ public class LoginValidatorServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        LoginValidator validator = new LoginValidator();
-
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-
-        boolean bUser = validator.validateUsername(username, password);
-
-        if (bUser) {
-            request.getSession().setAttribute("username", username);
-            response.sendRedirect("/CupcakeProject/Shop");
-        } else {
-            response.sendRedirect("/CupcakeProject/Login?validation=false");
-        }
-
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<style>");
-            out.println("h1 {color:deeppink;}");
-            out.println("p {color:tomato;}");
-            out.println("body {color:tomato; background:peachpuff}");
-            out.println("</style>");
-            out.println("<title>Servlet LoginValidatorServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Logging in</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            List<Person> persons = new ArrayList();
+            persons.add(new Person("Michael", 20));
+            persons.add(new Person("Christian", 28));
+            persons.add(new Person("Lasse", 24));
+            persons.add(new Person("Peter", 51));
+            persons.add(new Person("Preben", 64));
+            persons.add(new Person("Knud Børge", 71));
+            persons.add(new Person("Andreas", 12));
+            persons.add(new Person("Amalie", 18));
+            persons.add(new Person("Gudrun", 99));
+            request.setAttribute("Persons", persons);
+            request.getRequestDispatcher("view.jsp").forward(request, response);
         }
     }
 
