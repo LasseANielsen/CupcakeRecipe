@@ -1,4 +1,4 @@
-package Mandag;
+package mandag;
 
 
 public class Person {
