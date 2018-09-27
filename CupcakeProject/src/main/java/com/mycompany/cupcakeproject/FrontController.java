@@ -144,20 +144,23 @@ public class FrontController extends HttpServlet {
         if (checkLogin(request)) {
             int id = Integer.parseInt(request.getParameter("id"));
             UserDTO user = new Controller().getUserById(id);
-            int balance = 0;
-            String name = "user", username = "username", password = "password", email = "email@email.email";
-            CustomerOrAdmin customerOrAdmin = CustomerOrAdmin.C;
             if (user != null) {
-                balance = user.getBalance();
-                name = user.getName();
-                username = user.getUsername();
-                password = user.getPassword();
-                email = user.getEmail();
-                customerOrAdmin = user.getCustomerOrAdmin();
+                int balance = user.getBalance();
+                String name = user.getName();
+                String username = user.getUsername();
+                String password = user.getPassword();
+                String email = user.getEmail();
+                CustomerOrAdmin customerOrAdmin = user.getCustomerOrAdmin();
+                request.setAttribute("balance", balance);
+                request.setAttribute("name", name);
+                request.setAttribute("username", username);
+                request.setAttribute("password", password);
+                request.setAttribute("email", email);
+                request.setAttribute("customerOrAdmin", customerOrAdmin);
+                request.getRequestDispatcher("user.jsp").forward(request, response);
             } else {
-                response.sendRedirect("CupcakeProject/Login");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
-            request.getRequestDispatcher("user.jsp").forward(request, response);
         } else {
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }

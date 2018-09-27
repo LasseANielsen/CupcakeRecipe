@@ -12,11 +12,11 @@
     <body>
         <h1>Back to the mixer!</h1>
         <%
-            if ("false".equals(request.getParameter("error"))) {
+            if ("true".equals(request.getParameter("error"))) {
                 out.println("oh no, that cake does not exist!");
             }
         %>
-        <form action="/CupcakeProject/LoginValidator">
+        <form action="/CupcakeProject/FrontController?origin=loginvalidator">
             <p>Username</p><input type="text" name="username">
             <p>Password</p><input type="text" name="password">
             <br><br><input type="submit" value="Go to the mixer!">
@@ -24,7 +24,7 @@
         <%
             if ("true".equals(request.getParameter("error"))) {
         %> 
-        <form action="/CupcakeProject/Registration">
+        <form action="/CupcakeProject/FrontController?origin=register">
             <br>
             <br>
             <input type="submit" value="New recipe?">

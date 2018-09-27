@@ -23,7 +23,7 @@
             </head>
             <body>
             <h1>Welcome to the bakery! Where we bake hash!</h1>
-            <form action="/CupcakeProject/Cart">
+            <form action="/CupcakeProject/FrontController?origin=cart">
             <p> Choose your topping</p>
             <select name="Toppings">
             <option> Chocolate 5,-</option>
