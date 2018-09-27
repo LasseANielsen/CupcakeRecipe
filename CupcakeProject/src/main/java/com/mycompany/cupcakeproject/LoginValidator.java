@@ -30,3 +30,10 @@ public class LoginValidator {
         return password.equals(user.getPassword());
     }
 }
+
+/*
+select *
+from `user`
+where `username` = ? and `password` = ?;
+returnere 0 linjer hvis de ikke mactcher (bool)
+*/

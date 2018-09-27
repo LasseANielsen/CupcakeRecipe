@@ -37,22 +37,22 @@
                 <td></td>
             </tr>
             <tr>
-                <td>" + topName + "</td>
+                <td> <%= request.getAttribute("topname") %> </td>
                 <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
-                <td>" + botName + "</td>
+                <td> <%= request.getAttribute("botname") %> </td>
                 <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
-                <td>" + quantity + "</td>
+                <td> <%= request.getAttribute("quantity") %> </td>
                 <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
-                <td>" + totalPrice + "</td>
+                <td> <%= request.getAttribute("totalprice") %> </td>
             </tr>
         </table>
         <br>

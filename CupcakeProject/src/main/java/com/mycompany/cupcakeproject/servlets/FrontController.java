@@ -1,6 +1,8 @@
 package com.mycompany.cupcakeproject.servlets;
 
 import com.mycompany.cupcakeproject.Controller;
+import com.mycompany.cupcakeproject.DTO.BottomDTO;
+import com.mycompany.cupcakeproject.DTO.ToppingsDTO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,13 +31,38 @@ public class FrontController extends HttpServlet {
         String origin = request.getParameter("origin");
         if (origin != null) {
             switch (origin) {
-                case "":
+                case "cart":
+                    // Get values
+                    String topName = request.getParameter("Toppings").split(" ")[0];
+                    String botName = request.getParameter("Bottom").split(" ")[0];
+                    int quantity = Integer.parseInt(request.getParameter("Quantity"));
+                    ToppingsDTO topDTO = c.getToppingByName(topName);
+                    BottomDTO botDTO = c.getBottomByName(botName);
+                    int totalPrice = (topDTO.getPrice() + botDTO.getPrice()) * quantity;
+                    // forward values
+                    request.setAttribute("topname", topName);
+                    request.setAttribute("botname", botName);
+                    request.setAttribute("quantity", quantity);
+                    request.setAttribute("totalprice", totalPrice);
+                    request.getRequestDispatcher("cart.jsp").forward(request, response);
+                    break;
+                case "login":
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
+                    break;
+                case "register":
+                    request.getRequestDispatcher("register.jsp").forward(request, response);
+                    break;
+                case "shop":
+                    request.getRequestDispatcher("shop.jsp").forward(request, response);
+                    break;
+                case "user":
+                    request.getRequestDispatcher("user.jsp").forward(request, response);
                     break;
                 default:
-                    response.sendRedirect("");
+                    response.sendRedirect("index.html");
             }
         } else {
-            response.sendRedirect("");
+            response.sendRedirect("index.html");
         }
 
     }
