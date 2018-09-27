@@ -3,7 +3,7 @@ package com.mycompany.cupcakeproject;
 import com.mycompany.cupcakeproject.DTO.UserDTO;
 import org.apache.commons.validator.routines.EmailValidator;
 
-public class Validator {
+public class RegisterValidator {
 
     Controller c = new Controller();
 
@@ -18,7 +18,7 @@ public class Validator {
         if (username.length() < min || username.length() > max) {
             return false;
         }
-        UserDTO user = c.getUserByName(username);
+        UserDTO user = c.getUserByUsername(username);
         if (user != null) {
             return false;
         }

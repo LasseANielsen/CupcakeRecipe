@@ -11,18 +11,26 @@
     </head>
     <body>
         <h1>Back to the mixer!</h1>
-        <% if ("false".equals(request.getParameter("validation"))) {
+        <%
+            if ("false".equals(request.getParameter("error"))) {
                 out.println("oh no, that cake does not exist!");
-            }%>
+            }
+        %>
         <form action="/CupcakeProject/LoginValidator">
             <p>Username</p><input type="text" name="username">
             <p>Password</p><input type="text" name="password">
             <br><br><input type="submit" value="Go to the mixer!">
         </form>
-        <% if ("false".equals(request.getParameter("validation"))) {
-        %> <form action="/CupcakeProject/Registration">
-            <br><br><input type="submit" value="New recipe?">
-        </form> <%
-            }%>
+        <%
+            if ("true".equals(request.getParameter("error"))) {
+        %> 
+        <form action="/CupcakeProject/Registration">
+            <br>
+            <br>
+            <input type="submit" value="New recipe?">
+        </form> 
+        <%
+            }
+        %>
     </body>
 </html>

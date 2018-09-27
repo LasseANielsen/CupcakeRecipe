@@ -13,7 +13,7 @@ public class LoginValidator {
         if (username.contains(";")) {
             return false;
         }
-        UserDTO user = c.getUserByName(username);
+        UserDTO user = c.getUserByUsername(username);
         if (user == null) {
             return false;
         }

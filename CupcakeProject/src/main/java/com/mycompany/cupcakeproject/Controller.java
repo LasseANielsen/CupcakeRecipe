@@ -18,7 +18,7 @@ public class Controller {
         return DTO;
     }
 
-    public UserDTO getUserByName(String username) {
+    public UserDTO getUserByUsername(String username) {
         UserDTO DTO = userDAO.getUserByUsername(username);
         return DTO;
     }
