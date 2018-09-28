@@ -10,48 +10,43 @@
         <link href="css/cupcakeStyle.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <h1>Hello World!</h1>
-         <!DOCTYPE html>
-            <html>
-            <head>
-            <style>
-            h1 {color:deeppink;}
-            p {color:tomato;}
-            body {color:tomato; background:peachpuff}
-            </style>
-            <title>Servlet ShopServlet</title>
-            </head>
-            <body>
-            <h1>Welcome to the bakery! Where we bake hash!</h1>
-            <form action="FrontController?origin=cart">
+        <div class="topnav" id="myTopnav">
+            <a href="#home">Register</a>
+            <a href="#news">Login</a>
+            <a href="#contact">Shop</a>
+            <a href="#contact">Profile</a>
+            <a href="#about">Admin</a>
+        </div>
+        <h1>Welcome to the bakery!</h1>
+        <form action="FrontController?origin=cart">
             <p> Choose your topping</p>
             <select name="Toppings">
-            <option> Chocolate 5,-</option>
-            <option> Blueberry 5,-</option>
-            <option> Rasberry 5,-</option>
-            <option> Crispy 6,-</option>
-            <option> Strawberry 6,-</option>
-            <option> Rum/Raisin 7,-</option>
-            <option> Orange 8,-</option>
-            <option> Lemon 8,-</option>
-            <option> Blue Cheese 9,-</option>
+                <option> Chocolate 5,-</option>
+                <option> Blueberry 5,-</option>
+                <option> Rasberry 5,-</option>
+                <option> Crispy 6,-</option>
+                <option> Strawberry 6,-</option>
+                <option> Rum/Raisin 7,-</option>
+                <option> Orange 8,-</option>
+                <option> Lemon 8,-</option>
+                <option> Blue Cheese 9,-</option>
             </select>
             <p> Choose your bottom</p>
             <select name="Bottom">
-            <option> Chocolate 5,-</option>
-            <option> Vanilla 5,-</option>
-            <option> Nutmeg 5,-</option>
-            <option> Pistacio 6,-</option>
-            <option> Almond 7,-</option>
+                <option> Chocolate 5,-</option>
+                <option> Vanilla 5,-</option>
+                <option> Nutmeg 5,-</option>
+                <option> Pistacio 6,-</option>
+                <option> Almond 7,-</option>
             </select>
             <br>
             </select>
             <p>How many would you like?</p><input type="text" name="Quantity">
             <br><br>
             <input type="submit" value="Add to cart">
-            </form>
-            </body>
-            </html>
-        }
+        </form>
     </body>
+</html>
+}
+</body>
 </html>

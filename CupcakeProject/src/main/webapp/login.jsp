@@ -10,6 +10,13 @@
         <link href="css/cupcakeStyle.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <div class="topnav" id="myTopnav">
+            <a href="#home">Register</a>
+            <a href="#news">Login</a>
+            <a href="#contact">Shop</a>
+            <a href="#contact">Profile</a>
+            <a href="#about">Admin</a>
+        </div>
         <h1>Back to the mixer!</h1>
         <%
             if ("true".equals(request.getParameter("error"))) {
