@@ -52,6 +52,9 @@ public class FrontController extends HttpServlet {
                 case "profile":
                     handleUser(request, response);
                     break;
+                case "admin":
+                    handleAdmin(request, response);
+                    break;
                 default:
                     response.sendRedirect("index.html");
             }
@@ -61,8 +64,28 @@ public class FrontController extends HttpServlet {
 
     }
 
+    private void handleAdmin(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        if (checkAdmin(request)) {
+            request.getRequestDispatcher("admin.jsp").forward(request, response);
+        } else {
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }
+    }
+
+    private boolean checkAdmin(HttpServletRequest request) {
+        String un = (String) request.getSession().getAttribute("username");
+        UserDTO user = c.getUserByUsername(un);
+        boolean isAdmin = false;
+        if (user != null) {
+            if (user.getCustomerOrAdmin() == CustomerOrAdmin.A) {
+            isAdmin = true;
+            }
+        }
+        return isAdmin;
+    }
+
     private boolean checkLogin(HttpServletRequest request) {
-        String un = request.getSession().getAttribute("username").toString();
+        String un = (String) request.getSession().getAttribute("username");
         UserDTO user = c.getUserByUsername(un);
         boolean isLoggedIn = false;
         if (user != null) {
