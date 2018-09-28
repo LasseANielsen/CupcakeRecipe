@@ -18,11 +18,22 @@
             <a href="FrontController?origin=profile" class="active">Profile</a>
             <a href="FrontController?origin=admin">Admin</a>
         </div>
-        <h1>Her er dit dumme lorte data " + name + "!</h1>
-        <p> <% request.getAttribute("username"); %> </p>
-        <p> <% request.getAttribute("password"); %>" </p>
-        <p> <% request.getAttribute("email"); %>" </p>
-        <p> <% request.getAttribute("customerOrAdmin"); %>" </p>
-        <p> <% request.getAttribute("balance");%>" </p>
-    </body>
+        <h1>Sut min højre daddel, din abe, ved navn <% request.getAttribute("name"); %>!</h1>
+        <table class="blueTable">
+            <tbody>
+                <tr>
+                    <td>Username</td><td><% request.getAttribute("username"); %></td></tr>
+                <tr>
+                    <td>Password</td><td><% request.getAttribute("password"); %></td></tr>
+                <tr>
+                    <td>E-mail</td><td><% request.getAttribute("email"); %></td></tr>
+                <tr>
+                    <td>Status</td><td><% request.getAttribute("customerOrAdmin"); %>
+                    </td></tr>
+                <tr>
+                    <td>Balance</td><td><% request.getAttribute("balance");%></td></tr>
+            </tbody>
+        </tr>
+    </table>
+</body>
 </html>
