@@ -8,14 +8,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <link href="css/cupcakeStyle.css" rel="stylesheet" type="text/css"/>
+        <link href="css/topBorderStyle.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div class="topnav" id="myTopnav">
-            <a href="#home">Register</a>
-            <a href="#news">Login</a>
-            <a href="#contact">Shop</a>
-            <a href="#contact">Profile</a>
-            <a href="#about">Admin</a>
+            <a href="FrontController?origin=register" class="active">Register</a>
+            <a href="FrontController?origin=login">Login</a>
+            <a href="FrontController?origin=shop">Shop</a>
+            <a href="FrontController?origin=profile">Profile</a>
+            <a href="FrontController?origin=admin">Admin</a>
         </div>
         <h1>Mix your ingredients!</h1>
         <%

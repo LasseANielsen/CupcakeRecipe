@@ -1,9 +1,6 @@
 package com.mycompany.cupcakeproject;
 
-import com.mycompany.cupcakeproject.Controller;
-import com.mycompany.cupcakeproject.DTO.BottomDTO;
-import com.mycompany.cupcakeproject.DTO.ToppingsDTO;
-import com.mycompany.cupcakeproject.DTO.UserDTO;
+import com.mycompany.cupcakeproject.DTO.*;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,7 +29,7 @@ public class FrontController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         String origin = request.getParameter("origin");
-        if (origin.isEmpty()) {
+        if (origin != null) {
             switch (origin) {
                 case "cart":
                     handleCart(request, response);
@@ -52,7 +49,7 @@ public class FrontController extends HttpServlet {
                 case "shop":
                     handleShop(request, response);
                     break;
-                case "user":
+                case "profile":
                     handleUser(request, response);
                     break;
                 default:

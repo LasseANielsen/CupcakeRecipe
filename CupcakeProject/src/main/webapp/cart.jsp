@@ -8,8 +8,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <link href="css/cupcakeStyle.css" rel="stylesheet" type="text/css"/>
+        <link href="css/topBorderStyle.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <div class="topnav" id="myTopnav">
+            <a href="FrontController?origin=register">Register</a>
+            <a href="FrontController?origin=login">Login</a>
+            <a href="FrontController?origin=shop">Shop</a>
+            <a href="FrontController?origin=profile">Profile</a>
+            <a href="FrontController?origin=admin">Admin</a>
+        </div>
         <h1>Give the baker your order</h1>
         <table>
             <tr>
@@ -40,22 +48,22 @@
                 <td></td>
             </tr>
             <tr>
-                <td> <%= request.getAttribute("topname") %> </td>
+                <td> <%= request.getAttribute("topname")%> </td>
                 <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
-                <td> <%= request.getAttribute("botname") %> </td>
+                <td> <%= request.getAttribute("botname")%> </td>
                 <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
-                <td> <%= request.getAttribute("quantity") %> </td>
+                <td> <%= request.getAttribute("quantity")%> </td>
                 <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
-                <td> <%= request.getAttribute("totalprice") %> </td>
+                <td> <%= request.getAttribute("totalprice")%> </td>
             </tr>
         </table>
         <br>
