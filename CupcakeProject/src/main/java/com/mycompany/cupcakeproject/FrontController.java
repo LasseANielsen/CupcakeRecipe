@@ -32,7 +32,7 @@ public class FrontController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         String origin = request.getParameter("origin");
-        if (origin != null) {
+        if (origin.isEmpty()) {
             switch (origin) {
                 case "cart":
                     handleCart(request, response);
