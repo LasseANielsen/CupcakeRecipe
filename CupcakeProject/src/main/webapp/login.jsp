@@ -32,11 +32,9 @@
         <%
             if ("true".equals(request.getParameter("error"))) {
         %> 
-        <form action="FrontController?origin=register">
-            <br>
-            <br>
-            <input type="submit" value="New recipe?">
-        </form> 
+        <br>
+        <br>
+        <a href="FrontController?origin=register">New Recipe?</a>
         <%
             }
         %>
