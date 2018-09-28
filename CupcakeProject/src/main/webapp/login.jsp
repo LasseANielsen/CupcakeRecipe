@@ -16,7 +16,7 @@
                 out.println("oh no, that cake does not exist!");
             }
         %>
-        <form action="/CupcakeProject/FrontController?origin=loginvalidator">
+        <form action="FrontController?origin=loginvalidator">
             <p>Username</p><input type="text" name="username">
             <p>Password</p><input type="text" name="password">
             <br><br><input type="submit" value="Go to the mixer!">
@@ -24,7 +24,7 @@
         <%
             if ("true".equals(request.getParameter("error"))) {
         %> 
-        <form action="/CupcakeProject/FrontController?origin=register">
+        <form action="FrontController?origin=register">
             <br>
             <br>
             <input type="submit" value="New recipe?">

@@ -18,7 +18,7 @@
         <%
             }
         %>
-        <form action="/CupcakeProject/FrontController?origin=registervalidator">
+        <form action="FrontController?origin=registervalidator">
             <p>First ingredient - Username</p><input type="text" name="username">
             <p>Second ingredient - Password</p><input type="text" name="password">
             <p>Third ingredient - Email</p><input type="text" name="email">
