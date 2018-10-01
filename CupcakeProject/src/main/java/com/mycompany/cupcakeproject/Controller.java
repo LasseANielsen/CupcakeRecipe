@@ -13,6 +13,12 @@ public class Controller {
     ToppingsDAO topDAO = new ToppingsDAO();
     BottomDAO botDAO = new BottomDAO();
 
+    /**
+     * This method is going into our userDAO class to retrive
+     * a specific userDTO (Data Transfer Object) from our database.
+     * @param id is the specific id that we specify in out mysql statement.
+     * @return a userDTO which contains all the data from the specific user.
+     */
     public UserDTO getUserById(int id) {
         UserDTO DTO = userDAO.getUserById(id);
         return DTO;
