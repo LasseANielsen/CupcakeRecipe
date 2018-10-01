@@ -28,8 +28,7 @@
                 <tr>
                     <td>E-mail</td><td><% request.getAttribute("email"); %></td></tr>
                 <tr>
-                    <td>Status</td><td><% request.getAttribute("customerOrAdmin"); %>
-                    </td></tr>
+                    <td>Status</td><td><% request.getAttribute("customerOrAdmin"); %></td></tr>
                 <tr>
                     <td>Balance</td><td><% request.getAttribute("balance");%></td></tr>
             </tbody>
