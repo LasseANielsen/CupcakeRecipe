@@ -24,9 +24,10 @@
                 out.println("oh no, that cake does not exist!");
             }
         %>
-        <form action="FrontController?origin=loginvalidator">
+        <form action="FrontController">
             <p>Username</p><input type="text" name="username">
             <p>Password</p><input type="text" name="password">
+            <input type="hidden" name="origin" value="loginvalidator">
             <br><br><input type="submit" value="Go to the mixer!">
         </form>
         <%

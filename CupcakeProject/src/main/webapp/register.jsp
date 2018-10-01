@@ -26,10 +26,11 @@
         <%
             }
         %>
-        <form action="FrontController?origin=registervalidator">
+        <form action="FrontController">
             <p>First ingredient - Username</p><input type="text" name="username">
             <p>Second ingredient - Password</p><input type="text" name="password">
             <p>Third ingredient - Email</p><input type="text" name="email">
+            <input type="hidden" name="origin" value="registervalidator">
             <br><br><input type="submit" value="Bake Account">
         </form>
     </body>

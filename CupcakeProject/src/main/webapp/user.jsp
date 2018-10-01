@@ -18,7 +18,7 @@
             <a href="FrontController?origin=profile" class="active">Profile</a>
             <a href="FrontController?origin=admin">Admin</a>
         </div>
-        <h1>Sut min højre daddel, din abe, ved navn <% request.getAttribute("name"); %>!</h1>
+        <h1>Hello <% request.getAttribute("name"); %>!</h1>
         <table class="blueTable">
             <tbody>
                 <tr>
