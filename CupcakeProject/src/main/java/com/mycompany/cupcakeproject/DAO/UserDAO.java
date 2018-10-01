@@ -43,7 +43,7 @@ public class UserDAO {
             String query
                     = "SELECT * "
                     + "FROM `User` "
-                    + "WHERE `username` = '" + username + "';";
+                    + "WHERE `Username` = '" + username + "';";
             ResultSet res = stmt.executeQuery(query);
             while (res.next()) {
                 int id = Integer.parseInt(res.getString("Id"));
