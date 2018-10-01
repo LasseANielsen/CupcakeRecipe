@@ -27,7 +27,7 @@ public class RegisterValidator {
     }
 
     public boolean validatePassword(String password) {
-        int min = 8, max = 45;
+        int min = 4, max = 45;
         if (password == null || password.isEmpty()) {
             return false;
         }
