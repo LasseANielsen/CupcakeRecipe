@@ -70,8 +70,8 @@ public class UserDAO {
             int id = getNextAvailableId();
             String name = "user" + id;
             String query
-                    = "INSERT INTO `User`(`id`,`name`,`username`,`password`,`C/A`,`balance`,`email`) VALUES"
-                    + "('?','?','?','?','?','?','?');";
+                    = "INSERT INTO `User`(`Id`,`Name`,`Username`,`Password`,`C/A`,`Balance`,`Email`) VALUES "
+                    + "(?,?,?,?,?,?,?);";
             PreparedStatement stmt = c.prepareStatement(query);
             stmt.setInt(1, id);
             stmt.setString(2, name);
@@ -81,7 +81,8 @@ public class UserDAO {
             stmt.setInt(6, balance);
             stmt.setString(7, email);
 
-            ResultSet res = stmt.executeQuery(query);
+            stmt.executeUpdate();
+            //stmt.executeQuery(query);
         } catch (Exception ex) {
             ex.printStackTrace();
             System.out.println("Error");
