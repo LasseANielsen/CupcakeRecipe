@@ -64,6 +64,17 @@ public class FrontController extends HttpServlet {
 
     }
 
+    /**
+     * The handler which checks if the logged in user are admin or not. In the
+     * case the user is admin then they will be forwarded to the admin page. In
+     * the case they are not admin the will be forwarded to the login page, so
+     * they can log into an admin account.
+     *
+     * @param request servlet request.
+     * @param response servlet response.
+     * @throws IOException if an I/O error occurs.
+     * @throws ServletException if a servlet-specific error occurs.
+     */
     private void handleAdmin(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         if (checkAdmin(request)) {
             request.getRequestDispatcher("admin.jsp").forward(request, response);
@@ -72,18 +83,32 @@ public class FrontController extends HttpServlet {
         }
     }
 
+    /**
+     * The method which get the logged in users data and checks if the users is
+     * admin or not.
+     *
+     * @param request servlet request.
+     * @return the boolean value of the users admin status.
+     */
     private boolean checkAdmin(HttpServletRequest request) {
         String un = (String) request.getSession().getAttribute("username");
         UserDTO user = c.getUserByUsername(un);
         boolean isAdmin = false;
         if (user != null) {
             if (user.getCustomerOrAdmin() == CustomerOrAdmin.A) {
-            isAdmin = true;
+                isAdmin = true;
             }
         }
         return isAdmin;
     }
 
+    /**
+     * Upon reaching a new site with require you to be logged in, this method
+     * will check if you are logged in.
+     *
+     * @param request servlet request.
+     * @return the boolean value of the sessions logged in status.
+     */
     private boolean checkLogin(HttpServletRequest request) {
         String un = (String) request.getSession().getAttribute("username");
         UserDTO user = c.getUserByUsername(un);
@@ -94,6 +119,18 @@ public class FrontController extends HttpServlet {
         return isLoggedIn;
     }
 
+    /**
+     * The handler which controlls the cart and forwards the correct data to the
+     * cart so upon ariving to the cart.jsp, the wepsite will show you the
+     * correct cart.
+     *
+     * @param request servlet request.
+     * @param response servlet response.
+     * @throws IOException if an I/O error occurs.
+     * @throws NumberFormatException if quantity parameter does not contain
+     * numbers only.
+     * @throws ServletException if a servlet-specific error occurs.
+     */
     private void handleCart(HttpServletRequest request, HttpServletResponse response) throws IOException, NumberFormatException, ServletException {
         if (checkLogin(request)) {
             String topName = request.getParameter("Toppings").split(" ")[0];
@@ -112,6 +149,16 @@ public class FrontController extends HttpServlet {
         }
     }
 
+    /**
+     * The handler which make sure that when arving to the login page you will
+     * see the correct version of the login page (if you already tried but fail
+     * error messages will be showned).
+     *
+     * @param request servlet request.
+     * @param response servlet response.
+     * @throws ServletException if a servlet-specific error occurs.
+     * @throws IOException if an I/O error occurs.
+     */
     private void handleLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String error = request.getParameter("error");
@@ -121,6 +168,14 @@ public class FrontController extends HttpServlet {
         }
     }
 
+    /**
+     * The handler which handles the validation of the login page.
+     *
+     * @param request servlet request.
+     * @param response servlet response.
+     * @throws IOException if an I/O error occurs.
+     * @throws ServletException if a servlet-specific error occurs.
+     */
     private void handleLoginValidator(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -133,10 +188,28 @@ public class FrontController extends HttpServlet {
         }
     }
 
+    /**
+     * The handler which forwards you to the register page.
+     *
+     * @param request servlet request.
+     * @param response servlet response.
+     * @throws ServletException if a servlet-specific error occurs.
+     * @throws IOException if an I/O error occurs.
+     */
     private void handleRegister(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("register.jsp").forward(request, response);
     }
 
+    /**
+     * The handler which handles the register validation and forwards you to the
+     * correct page in both cases of the registration being approved and
+     * disapproved.
+     *
+     * @param request servlet request.
+     * @param response servlet response.
+     * @throws ServletException if a servlet-specific error occurs.
+     * @throws IOException if an I/O error occurs.
+     */
     private void handleRegisterValidator(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -152,6 +225,15 @@ public class FrontController extends HttpServlet {
         }
     }
 
+    /**
+     * The handler which forwards you to the shop but in the case you are not
+     * logged in you are instead being forwarded to the login page.
+     *
+     * @param request servlet request.
+     * @param response servlet response.
+     * @throws IOException if an I/O error occurs.
+     * @throws ServletException if a servlet-specific error occurs.
+     */
     private void handleShop(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         if (checkLogin(request)) {
             request.getRequestDispatcher("shop.jsp").forward(request, response);
@@ -160,6 +242,15 @@ public class FrontController extends HttpServlet {
         }
     }
 
+    /**
+     * The handler which handles the user page and makes sure that the user data
+     * will be forwarded with the user.
+     *
+     * @param request servlet request.
+     * @param response servlet response.
+     * @throws ServletException if a servlet-specific error occurs.
+     * @throws IOException if an I/O error occurs.
+     */
     private void handleUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (checkLogin(request)) {
             int id = Integer.parseInt(request.getParameter("id"));

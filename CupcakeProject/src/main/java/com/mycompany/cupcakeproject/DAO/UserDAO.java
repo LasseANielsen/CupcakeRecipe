@@ -10,6 +10,13 @@ import java.sql.Statement;
 
 public class UserDAO {
 
+    /**
+     * Connects to the database and retrive the specific user by the id
+     * parameter.
+     *
+     * @param id user id.
+     * @return a copy of an user from the database.
+     */
     public UserDTO getUserById(int id) {
         try {
             Connection c = new DBConnector().getConnection();
@@ -37,6 +44,13 @@ public class UserDAO {
         return null;
     }
 
+    /**
+     * Connects to the database and retrive the specific user by the username
+     * parameter.
+     *
+     * @param username user username.
+     * @return a copy of an user from the database.
+     */
     public UserDTO getUserByUsername(String username) {
         try {
             Connection c = new DBConnector().getConnection();
@@ -64,6 +78,15 @@ public class UserDAO {
         return null;
     }
 
+    /**
+     * The method which executes the mysql query string and create a user and
+     * stores it in the database.
+     *
+     * @param email users email.
+     * @param username users username.
+     * @param password users password.
+     * @param balance users cash.
+     */
     public void createUser(String email, String username, String password, int balance) {
         try {
             Connection c = new DBConnector().getConnection();

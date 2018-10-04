@@ -8,6 +8,13 @@ import java.sql.Statement;
 
 public class ToppingsDAO {
 
+    /**
+     * Connects to the database and retrive the specific topping by the id
+     * parameter.
+     *
+     * @param id topping id.
+     * @return a copy of a topping from the database.
+     */
     public ToppingsDTO getPriceById(int id) {
         try {
             Connection c = new DBConnector().getConnection();
@@ -31,6 +38,13 @@ public class ToppingsDAO {
         return null;
     }
 
+    /**
+     * Connects to the database and retrive the specific topping by the name
+     * parameter.
+     *
+     * @param name topping name.
+     * @return a copy of a topping from the database.
+     */
     public ToppingsDTO getPriceByName(String name) {
         try {
             Connection c = new DBConnector().getConnection();

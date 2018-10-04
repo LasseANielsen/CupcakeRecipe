@@ -7,6 +7,14 @@ public class RegisterValidator {
 
     Controller c = new Controller();
 
+    /**
+     * Checks to see if the current user tries to use valid data to create a new
+     * user.
+     *
+     * @param username the username which will go through some test to see if it
+     * is valid or not
+     * @return the boolean value of the username validation.
+     */
     public boolean validateUsername(String username) {
         int min = 4, max = 45;
         if (username == null || username.isEmpty()) {
@@ -26,6 +34,14 @@ public class RegisterValidator {
         return true;
     }
 
+    /**
+     * Checks to see if the current user tries to use valid data to create a new
+     * user.
+     *
+     * @param password the password which will go through some test to see if it
+     * is valid or not
+     * @return the boolean value of the passwords validation.
+     */
     public boolean validatePassword(String password) {
         int min = 4, max = 45;
         if (password == null || password.isEmpty()) {
