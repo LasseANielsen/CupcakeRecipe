@@ -163,7 +163,7 @@ public class FrontController extends HttpServlet {
         try {
             String error = request.getParameter("error");
             request.getRequestDispatcher("login.jsp?error=" + error).forward(request, response);
-        } catch (IOException | ServletException e) {
+        } catch (IOException | ServletException | NullPointerException | NumberFormatException e) {
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
@@ -252,29 +252,29 @@ public class FrontController extends HttpServlet {
      * @throws IOException if an I/O error occurs.
      */
     private void handleUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (checkLogin(request)) {
-            int id = Integer.parseInt(request.getParameter("id"));
-            UserDTO user = new Controller().getUserById(id);
-            if (user != null) {
-                int balance = user.getBalance();
-                String name = user.getName();
-                String username = user.getUsername();
-                String password = user.getPassword();
-                String email = user.getEmail();
-                CustomerOrAdmin customerOrAdmin = user.getCustomerOrAdmin();
-                request.setAttribute("balance", balance);
-                request.setAttribute("name", name);
-                request.setAttribute("username", username);
-                request.setAttribute("password", password);
-                request.setAttribute("email", email);
-                request.setAttribute("customerOrAdmin", customerOrAdmin);
-                request.getRequestDispatcher("user.jsp").forward(request, response);
+            if (checkLogin(request)) {
+                String un = request.getParameter("username");
+                UserDTO user = new Controller().getUserByUsername(un);
+                if (user != null) {
+                    int balance = user.getBalance();
+                    String name = user.getName();
+                    String username = user.getUsername();
+                    String password = user.getPassword();
+                    String email = user.getEmail();
+                    CustomerOrAdmin customerOrAdmin = user.getCustomerOrAdmin();
+                    request.setAttribute("balance", balance);
+                    request.setAttribute("name", name);
+                    request.setAttribute("username", username);
+                    request.setAttribute("password", password);
+                    request.setAttribute("email", email);
+                    request.setAttribute("customerOrAdmin", customerOrAdmin);
+                    request.getRequestDispatcher("user.jsp").forward(request, response);
+                } else {
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
+                }
             } else {
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
-        } else {
-            request.getRequestDispatcher("login.jsp").forward(request, response);
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
